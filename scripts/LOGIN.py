@@ -20,12 +20,13 @@ wait = WebDriverWait(driver,200)
 confirmed = False
 
 def log_in():
+    # include your login credentials in the file scripts/credentials.txt if you want to login
+    # it will continue otherwise 
     with open("credentials.txt", "r") as file:
-    	username = file.readline().strip()
-    	password = file.readline().strip()
-    driver.get("https://humanbenchmark.com/login")
+        username = file.readline().strip()
+        password = file.readline().strip()
+    driver.get("https://www.humanbenchmark.com/login")
     wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'fc-button-label'))).click()
-    confirmed = True
     print('found Confirm')
     sleep(2)
     wait.until(EC.element_to_be_clickable((By.NAME,'username'))).send_keys(username, Keys.TAB, password, Keys.RETURN)
