@@ -34,9 +34,14 @@ This project automates tasks on [humanbenchmark.com](https://www.humanbenchmark.
 
 To run the Verbal Memory automation:
 
-```sh
-python scripts/VerbalMemory.py
-```
+- Double-click the file named VerbalMemory.py
+
+   OR 
+
+   ```sh
+   python scripts/VerbalMemory.py
+   ```
+   (from the project directory)
 
 - The script will open Chrome and start the Verbal Memory test.
 - Press `ESC` at any time to stop the script (Chrome will remain open).
