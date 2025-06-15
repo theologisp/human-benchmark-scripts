@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from time import sleep
+import os
 
 options = Options()
 options.add_argument("--incognito")
@@ -22,7 +23,8 @@ confirmed = False
 def log_in():
     # include your login credentials in the file scripts/credentials.txt if you want to login
     # it will continue otherwise 
-    with open("credentials.txt", "r") as file:
+    cred_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "credentials.txt"))
+    with open(cred_path, "r") as file:
         username = file.readline().strip()
         password = file.readline().strip()
     driver.get("https://www.humanbenchmark.com/login")
